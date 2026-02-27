@@ -3,90 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع صالح قطان</title>
-    <style>
-        body {
-            background-color: #0f172a;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        .profile-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 25px;
-            border: 2px solid #38bdf8;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
-            max-width: 350px;
-            width: 90%;
-        }
-        h1 { color: #38bdf8; font-size: 2.5rem; margin-bottom: 5px; }
-        
-        /* تنسيق الساعة */
-        #clock {
-            font-size: 1.5rem;
-            color: #34d399; /* لون أخضر جميل */
-            font-weight: bold;
-            margin: 15px 0;
-            background: rgba(52, 211, 153, 0.1);
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .btn {
-            display: block;
-            background: transparent;
-            color: #38bdf8;
-            text-decoration: none;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #38bdf8;
-            border-radius: 12px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #38bdf8;
-            color: #0f172a;
-            transform: translateY(-3px);
-        }
-    </style>
+    <title>أكاديمية صالح قطان</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="profile-card">
-        <h1>صالح قطان</h1>
-        
+    <div class="header">
+        <h1>DESIGN ACADEMY</h1>
+        <p>صالح قطان — مبرمج واجهات محترف</p>
+    </div>
+
+    <div class="main-card">
         <div id="clock">00:00:00</div>
+        <h3>مولد المشاريع الإبداعية</h3>
+        <p>اضغط لتوليد مهمة برمجية جديدة للتدريب</p>
         
-        <p>مبرمج ومطور واجهات ويب</p>
+        <button class="btn-generate" onclick="generateBrief()">توليد مشروع جديد</button>
+
+        <div id="brief-result">
+            <div class="brief-title">✦ المهمة المطلوبة ✦</div>
+            <div id="task" class="brief-text"></div>
+        </div>
         
-        <a href="https://wa.me/5510997852" class="btn">واتساب</a>
-        <a href="https://t.me/salhqtan0" class="btn">تليجرام</a>
+        <div class="links">
+            <a href="https://wa.me/5510997852" class="btn-link">واتساب</a>
+            <a href="https://t.me/salhqtan0" class="btn-link">تليجرام</a>
+        </div>
     </div>
 
     <script>
+        // كود الساعة الرقمية
         function updateClock() {
             const now = new Date();
-            let hours = now.getHours();
-            let minutes = now.getMinutes();
-            let seconds = now.getSeconds();
-            
-            // إضافة صفر إذا كان الرقم أقل من 10
-            hours = hours < 10 ? '0' + hours : hours;
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-            
-            document.getElementById('clock').innerHTML = hours + ":" + minutes + ":" + seconds;
+            let h = String(now.getHours()).padStart(2, '0');
+            let m = String(now.getMinutes()).padStart(2, '0');
+            let s = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').innerText = h + ":" + m + ":" + s;
         }
-        setInterval(updateClock, 1000); // تحديث كل ثانية
-        updateClock(); // تشغيل فوري
-    </script>
+        setInterval(updateClock, 1000);
+        updateClock();
 
+        // كود توليد المهام (مثل ملف brief_gen)
+        function generateBrief() {
+            const projects = [
+                "صمم واجهة تطبيق بنك رقمي يركز على الفخامة.",
+                "برمج صفحة هبوط لشركة طيران خاصة عالمية.",
+                "اصنع لوحة تحكم لمستثمرين في العملات الرقمية.",
+                "صمم موقعاً تعريفياً لمصمم مجوهرات باللون الذهبي."
+            ];
+            const taskText = document.getElementById('task');
+            const resultDiv = document.getElementById('brief-result');
+            taskText.innerText = projects[Math.floor(Math.random() * projects.length)];
+            resultDiv.style.display = 'block';
+        }
+    </script>
 </body>
 </html>

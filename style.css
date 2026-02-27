@@ -1,0 +1,107 @@
+/* التنسيق الفاخر - أكاديمية صالح قطان */
+:root {
+    --bg: #080808;
+    --gold: #c9973a;
+    --gold-grad: linear-gradient(135deg, #c9973a, #f0d060, #c9973a);
+    --border: #2a2010;
+}
+
+body {
+    background-color: var(--bg);
+    color: #f0e8d8;
+    font-family: 'Cormorant Garamond', serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    max-width: 500px;
+    padding-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: 2rem;
+}
+
+.main-card {
+    background: #111111;
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 4px;
+    margin-top: 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+}
+
+#clock {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.btn-generate {
+    background: var(--gold-grad);
+    color: black;
+    border: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    width: 100%;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-generate:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px var(--gold);
+}
+
+.brief-title { 
+    color: var(--gold); 
+    margin-top: 20px; 
+    font-weight: bold; 
+    font-size: 1.2rem;
+}
+
+#task {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #d8c8b0;
+}
+
+.links { 
+    margin-top: 25px; 
+    display: flex; 
+    gap: 10px; 
+}
+
+.btn-link {
+    flex: 1;
+    text-decoration: none;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    background: var(--gold);
+    color: black;
