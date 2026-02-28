@@ -1,4 +1,4 @@
-/* الإعدادات العامة - صالح قطان */
+/* الإعدادات الأساسية */
 * {
     margin: 0;
     padding: 0;
@@ -9,26 +9,27 @@
     --black: #080808;
     --dark-grey: #121212;
     --gold: #c9973a;
-    --gold-hover: #e5b95f;
     --white: #ffffff;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth; /* تمرير ناعم عند ضغط الأزرار */
+}
 
 body {
     background-color: var(--black);
     color: var(--white);
     font-family: 'Cairo', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden; /* يمنع التزحلق الجانبي في الجوال */
+    overflow-x: hidden;
 }
 
-/* القائمة العلوية - تعديل للجوال */
+/* القائمة العلوية */
 nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 15px 5%;
+    padding: 15px;
     background: rgba(8, 8, 8, 0.95);
     position: fixed;
     width: 100%;
@@ -39,15 +40,24 @@ nav {
 
 .logo {
     font-family: 'Cinzel', serif;
-    font-size: 20px; /* تصغير اللوجو قليلاً للجوال */
+    font-size: 22px;
     color: var(--gold);
 }
 
-.nav-links { display: flex; list-style: none; }
-.nav-links li { margin-right: 15px; } /* تقليل المسافات بين الروابط */
-.nav-links a { text-decoration: none; color: var(--white); font-size: 12px; }
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    margin-top: 10px;
+    gap: 15px;
+}
 
-/* القسم الرئيسي - إصلاح الأزرار والنصوص */
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 13px;
+}
+
+/* القسم الرئيسي (Hero) */
 .hero {
     height: 100vh;
     display: flex;
@@ -57,56 +67,77 @@ nav {
     padding: 0 20px;
 }
 
-.hero h1 {
-    font-size: 35px; /* تصغير الخط ليناسب شاشة الجوال */
-    margin-bottom: 10px;
-}
+.hero h1 { font-size: 38px; margin-bottom: 10px; }
+.gold-text { color: var(--gold); }
+.highlight { border-bottom: 2px solid var(--gold); }
 
-.btns { 
-    margin-top: 30px; 
-    display: flex; 
-    flex-direction: column; /* جعل الأزرار فوق بعض في الجوال */
-    gap: 10px; 
+/* تنسيق الأزرار للجوال */
+.btns {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; 
+    gap: 15px;
     align-items: center;
 }
 
 .btn-primary, .btn-secondary {
-    padding: 12px 0;
-    width: 200px; /* توحيد عرض الأزرار لتبدو مرتبة */
+    width: 220px;
+    padding: 12px;
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    display: inline-block;
+    text-align: center;
     transition: 0.3s;
 }
 
 .btn-primary { background: var(--gold); color: var(--black); }
 .btn-secondary { border: 1px solid var(--gold); color: var(--gold); }
 
-/* قسم الخدمات - ترتيب عمودي للجوال */
+/* الخدمات */
+.section-title { text-align: center; color: var(--gold); margin: 60px 0 30px; }
+
 .container {
     display: flex;
-    flex-direction: column; /* ترتيب الكروت عمودياً */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 0 5%;
+    padding: 20px;
 }
 
 .card {
     background: var(--dark-grey);
-    padding: 30px 20px;
-    border-radius: 20px;
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
-    width: 100%; /* الكرت يأخذ عرض الشاشة */
-    max-width: 350px;
+    width: 100%;
+    max-width: 320px;
+    border: 1px solid #222;
 }
 
-/* إعدادات الشاشات الكبيرة (الكمبيوتر) */
+.card i { font-size: 40px; color: var(--gold); margin-bottom: 15px; }
+
+/* المعرض */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.work-item { height: 200px; border-radius: 10px; overflow: hidden; position: relative; }
+.work-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* فوتر التواصل */
+footer { padding: 60px 20px; text-align: center; background: #050505; }
+.social-icons { margin: 20px 0; font-size: 25px; }
+.social-icons a { color: var(--white); margin: 0 15px; }
+
+/* تعديلات الشاشات الكبيرة (الكمبيوتر) */
 @media (min-width: 768px) {
+    nav { flex-direction: row; justify-content: space-between; padding: 20px 8%; }
+    .nav-links { margin-top: 0; }
     .hero h1 { font-size: 60px; }
     .btns { flex-direction: row; justify-content: center; }
     .container { flex-direction: row; justify-content: center; }
-    nav { padding: 20px 8%; }
-    .logo { font-size: 24px; }
-    .nav-links a { font-size: 14px; }
+    .gallery { grid-template-columns: repeat(3, 1fr); padding: 0 8% 60px; }
 }
