@@ -12,9 +12,9 @@
 
     <nav>
         <div class="logo">QATTAN<span>.</span></div>
+        <div id="clock" class="digital-clock">00:00:00</div>
         <ul class="nav-links">
             <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#services">الخدمات</a></li>
             <li><a href="#portfolio">الأعمال</a></li>
             <li><a href="#contact">تواصل</a></li>
         </ul>
@@ -22,36 +22,14 @@
 
     <header id="home" class="hero">
         <div class="hero-text">
-            <h5>مرحباً بك في عالمي الإبداعي</h5>
             <h1>صالح <span class="gold-text">قطان</span></h1>
-            <p>أدمج بين <span class="highlight">برمجة الويب</span> و <span class="highlight">التصميم</span> و <span class="highlight">الذكاء الاصطناعي</span></p>
+            <p>مصمم جرافيك | مطور ويب | خبير ذكاء اصطناعي</p>
             <div class="btns">
                 <a href="#portfolio" class="btn-primary">مشاهدة أعمالي</a>
                 <a href="#contact" class="btn-secondary">تواصل الآن</a>
             </div>
         </div>
     </header>
-
-    <section id="services" class="services">
-        <h2 class="section-title">مهاراتي الاحترافية</h2>
-        <div class="container">
-            <div class="card">
-                <i class="fas fa-code-branch"></i>
-                <h3>مطور ويب</h3>
-                <p>بناء واجهات مستخدم احترافية وتطبيقات ويب سريعة.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-bezier-curve"></i>
-                <h3>مصمم جرافيك</h3>
-                <p>ابتكار هويات بصرية وشعارات فريدة تترك انطباعاً.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-microchip"></i>
-                <h3>خبير ذكاء اصطناعي</h3>
-                <p>صناعة محتوى بصري وفني باستخدام التقنيات المتطورة.</p>
-            </div>
-        </div>
-    </section>
 
     <section id="portfolio" class="portfolio">
         <h2 class="section-title">معرض الإبداع</h2>
@@ -64,25 +42,27 @@
                 <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500" alt="Work 2">
                 <div class="overlay"><span>تطوير ويب</span></div>
             </div>
-            <div class="work-item">
-                <img src="https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=500" alt="Work 3">
-                <div class="overlay"><span>ذكاء اصطناعي</span></div>
-            </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h3>هل أنت جاهز لبدء مشروعك القادم؟</h3>
-        <p>تواصل معي عبر المنصات التالية</p>
         <div class="social-icons">
             <a href="https://x.com/salhqtan" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://behance.net/salhqtan" target="_blank"><i class="fa-brands fa-behance"></i></a>
-            <a href="https://wa.me/5510997852" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/966500000000" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="https://instagram.com/salhqtan" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/salhqtan" target="_blank"><i class="fa-brands fa-github"></i></a>
         </div>
         <p class="copyright">&copy; 2026 صالح قطان. جميع الحقوق محفوظة.</p>
     </footer>
 
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-GB'); // تنسيق 24 ساعة
+            document.getElementById('clock').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
