@@ -3,62 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية صالح قطان</title>
-    
+    <title>صالح قحطان | الويب والذكاء الاصطناعي</title>
     <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="header">
-        <h1>DESIGN ACADEMY</h1>
-        <p>صالح قطان — مبرمج واجهات محترف</p>
-    </div>
+    <nav>
+        <div class="logo">SALH<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#portfolio">الأعمال</a></li>
+            <li><a href="#contact">تواصل معي</a></li>
+        </ul>
+    </nav>
 
-    <div class="main-card">
-        <div id="clock">00:00:00</div>
-        <h3>مولد المشاريع الإبداعية</h3>
-        <p>اضغط لتوليد مهمة برمجية جديدة للتدريب</p>
-        
-        <button class="btn-generate" onclick="generateBrief()">توليد مشروع جديد</button>
-
-        <div id="brief-result">
-            <div class="brief-title">✦ المهمة المطلوبة ✦</div>
-            <div id="task" class="brief-text"></div>
+    <header id="home" class="hero">
+        <div class="hero-text">
+            <h5>مرحباً بك في عالمي الإبداعي</h5>
+            <h1>صالح <span class="gold-text">قطان</span></h1>
+            <p>أدمج بين <span class="highlight">برمجة الويب</span> و <span class="highlight">التصميم الجرافيكي</span> وسحر <span class="highlight">الذكاء الاصطناعي</span></p>
+            <div class="btns">
+                <a href="#portfolio" class="btn-primary">مشاهدة أعمالي</a>
+                <a href="#contact" class="btn-secondary">تواصل الآن</a>
+            </div>
         </div>
-        
-        <div class="links">
-            <a href="https://wa.me/5510997852" class="btn-link">واتساب</a>
-            <a href="https://t.me/salhqtan0" class="btn-link">تليجرام</a>
+    </header>
+
+    <section id="services" class="services">
+        <h2 class="section-title">مهاراتي الاحترافية</h2>
+        <div class="container">
+            <div class="card">
+                <i class="fas fa-code-branch"></i>
+                <h3>مطور ويب</h3>
+                <p>بناء واجهات مستخدم احترافية وتطبيقات ويب سريعة باستخدام أحدث التقنيات.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-bezier-curve"></i>
+                <h3>مصمم جرافيك</h3>
+                <p>ابتكار هويات بصرية وشعارات فريدة تترك انطباعاً لا ينسى.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-microchip"></i>
+                <h3>خبير ذكاء اصطناعي</h3>
+                <p>صناعة محتوى بصري وفني باستخدام تقنيات الذكاء التوليدي المتطورة.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        // كود الساعة الرقمية
-        function updateClock() {
-            const now = new Date();
-            let h = String(now.getHours()).padStart(2, '0');
-            let m = String(now.getMinutes()).padStart(2, '0');
-            let s = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('clock').innerText = h + ":" + m + ":" + s;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">معرض الإبداع</h2>
+        <div class="gallery">
+            <div class="work-item">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=500" alt="Graphic Design">
+                <div class="overlay"><span>تصميم جرافيك</span></div>
+            </div>
+            <div class="work-item">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500" alt="Web Dev">
+                <div class="overlay"><span>تطوير ويب</span></div>
+            </div>
+            <div class="work-item">
+                <img src="https://images.unsplash.com/photo-1675271591211-126ad94e495d?q=80&w=500" alt="AI Art">
+                <div class="overlay"><span>ذكاء اصطناعي</span></div>
+            </div>
+        </div>
+    </section>
 
-        // كود توليد المهام (مثل ملف brief_gen)
-        function generateBrief() {
-            const projects = [
-                "صمم واجهة تطبيق بنك رقمي يركز على الفخامة.",
-                "برمج صفحة هبوط لشركة طيران خاصة عالمية.",
-                "اصنع لوحة تحكم لمستثمرين في العملات الرقمية.",
-                "صمم موقعاً تعريفياً لمصمم مجوهرات باللون الذهبي."
-            ];
-            const taskText = document.getElementById('task');
-            const resultDiv = document.getElementById('brief-result');
-            taskText.innerText = projects[Math.floor(Math.random() * projects.length)];
-            resultDiv.style.display = 'block';
-        }
-    </script>
+    <footer id="contact">
+        <h3>هل أنت جاهز لبدء مشروعك القادم؟</h3>
+        <p>تواصل معي عبر المنصات التالية</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 صالح قحطان. جميع الحقوق محفوظة.</p>
+    </footer>
+
 </body>
 </html>
