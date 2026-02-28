@@ -1,4 +1,3 @@
-/* الإعدادات الأساسية */
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +11,7 @@
     --white: #ffffff;
 }
 
-html { 
-    scroll-behavior: smooth; /* تمرير ناعم عند ضغط الأزرار */
-}
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--black);
@@ -38,101 +35,37 @@ nav {
     border-bottom: 1px solid rgba(201, 151, 58, 0.2);
 }
 
-.logo {
-    font-family: 'Cinzel', serif;
-    font-size: 22px;
-    color: var(--gold);
-}
+.logo { font-family: 'Cinzel', serif; font-size: 22px; color: var(--gold); }
+.nav-links { display: flex; list-style: none; margin-top: 10px; gap: 15px; }
+.nav-links a { text-decoration: none; color: var(--white); font-size: 13px; }
 
-.nav-links { 
-    display: flex; 
-    list-style: none; 
-    margin-top: 10px;
-    gap: 15px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--white);
-    font-size: 13px;
-}
-
-/* القسم الرئيسي (Hero) */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
+/* الأزرار */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
 .hero h1 { font-size: 38px; margin-bottom: 10px; }
 .gold-text { color: var(--gold); }
 .highlight { border-bottom: 2px solid var(--gold); }
 
-/* تنسيق الأزرار للجوال */
-.btns {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column; 
-    gap: 15px;
-    align-items: center;
-}
-
-.btn-primary, .btn-secondary {
-    width: 220px;
-    padding: 12px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    text-align: center;
-    transition: 0.3s;
-}
-
+.btns { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+.btn-primary, .btn-secondary { width: 220px; padding: 12px; text-decoration: none; border-radius: 50px; font-weight: bold; text-align: center; transition: 0.3s; }
 .btn-primary { background: var(--gold); color: var(--black); }
 .btn-secondary { border: 1px solid var(--gold); color: var(--gold); }
 
-/* الخدمات */
+/* الخدمات والمعرض */
 .section-title { text-align: center; color: var(--gold); margin: 60px 0 30px; }
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
-    background: var(--dark-grey);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    width: 100%;
-    max-width: 320px;
-    border: 1px solid #222;
-}
-
+.container { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px; }
+.card { background: var(--dark-grey); padding: 30px; border-radius: 15px; text-align: center; width: 100%; max-width: 320px; border: 1px solid #222; }
 .card i { font-size: 40px; color: var(--gold); margin-bottom: 15px; }
 
-/* المعرض */
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 20px;
-}
-
+.gallery { display: grid; grid-template-columns: 1fr; gap: 15px; padding: 20px; }
 .work-item { height: 200px; border-radius: 10px; overflow: hidden; position: relative; }
 .work-item img { width: 100%; height: 100%; object-fit: cover; }
 
-/* فوتر التواصل */
+/* أيقونات التواصل */
 footer { padding: 60px 20px; text-align: center; background: #050505; }
-.social-icons { margin: 20px 0; font-size: 25px; }
-.social-icons a { color: var(--white); margin: 0 15px; }
+.social-icons { margin: 20px 0; font-size: 28px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.social-icons a { color: var(--white); transition: 0.3s; }
+.social-icons a:hover { color: var(--gold); transform: scale(1.2); }
 
-/* تعديلات الشاشات الكبيرة (الكمبيوتر) */
 @media (min-width: 768px) {
     nav { flex-direction: row; justify-content: space-between; padding: 20px 8%; }
     .nav-links { margin-top: 0; }
